@@ -2,6 +2,7 @@ package Pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import org.junit.Assert;
 
 public class LoginPage {
 
@@ -9,12 +10,14 @@ public class LoginPage {
     private Locator userNameTextBox;
     private Locator passwordTextBox;
     private Locator loginButton;
+    private Locator errorMessage;
 
     public LoginPage(Page page) {
         this.driver = page;
         this.userNameTextBox = driver.locator("id=user-name");
         this.passwordTextBox = driver.locator("id=password");
         this.loginButton = driver.locator("id=login-button");
+        this.errorMessage = driver.locator("//h3[@data-test='error']");
     }
 
 
@@ -28,5 +31,9 @@ public class LoginPage {
 
     public void clickOnLoginButton() {
         loginButton.click();
+    }
+
+    public void verifyErrorMessageText(String errorText) {
+        Assert.assertEquals(errorText, errorMessage.textContent());
     }
 }
