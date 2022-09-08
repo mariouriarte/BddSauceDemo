@@ -17,7 +17,7 @@ public class LoginSteps {
 
     @When("I set the password text box with {string}")
     public void setPassword(String password) {
-        loginPage.setPasswordTextBox("password");
+        loginPage.setPasswordTextBox(password);
     }
 
     @When("I click on the login button")
