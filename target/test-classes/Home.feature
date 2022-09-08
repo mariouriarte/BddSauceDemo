@@ -6,10 +6,10 @@ Background: User is logged into sauce demo web page
   And I set the password text box with "secret_sauce"
   And I click on the login button
 
-  Scenario: Sauce Labs Backpack is available in the home page
+  Scenario Outline: Product are available in the home page
     When I am in the home page
-    Then I verify that "Sauce Labs Backpack" is displayed
-
-  Scenario: Sauce Labs Backpack is available in the home page
-    When I am in the home page
-    Then I verify that "Sauce Labs Bike Light" is displayed
+    Then I verify that "<product>" is displayed
+  Examples:
+    | product               |
+    | Sauce Labs Backpack   |
+    | Sauce Labs Bike Light |
