@@ -1,6 +1,6 @@
 Feature: As a user i want to be able to login into Sauce Labs Demo Web Page
-  Background: User is in the sauce labs page
-    Given I am in the Sauce Labs Demo Page
+#  Background: User is in the sauce labs page
+#    Given I am in the Sauce Labs Demo Page
 
   Scenario: Login into Sauce Demo page with valid credentials
     When I set the user name text box with "standard_user"
