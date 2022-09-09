@@ -7,12 +7,14 @@ import org.junit.Assert;
 public class HomePage {
     private Page driver;
     private Locator header;
-    private Locator item;
-
+    private Locator sauceLabsBackPackAddButton;
+    private Locator cartIcon;
 
     public HomePage(Page driver) {
         this.driver = driver;
         this.header = driver.locator("div.header_label");
+        this.sauceLabsBackPackAddButton = driver.locator("id=add-to-cart-sauce-labs-backpack");
+        this.cartIcon = driver.locator("a.shopping_cart_link");
     }
 
     public void verifyHeaderHomePageIsDisplay() {
@@ -23,5 +25,13 @@ public class HomePage {
 
     public void verifyProductInHomePage(String product) {
         Assert.assertTrue(driver.isVisible("//div[text()='" + product + "']"));
+    }
+
+    public void clickOnAddSauceLabsBackPack() {
+        sauceLabsBackPackAddButton.click();
+    }
+
+    public void clickOnCartIcon() {
+        cartIcon.click();
     }
 }
