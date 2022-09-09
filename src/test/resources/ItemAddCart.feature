@@ -5,7 +5,7 @@ Feature: As a user i should be add items to cart
     And I set the password text box with "secret_sauce"
     And I click on the login button
 
-  Scenario: Sauce labs backpack checkout
+  Scenario: Sauce labs backpack is added to car
     When I add sauce labs back pack product to the car
     And I click on the cart icon
     Then I verify that the item is "Sauce Labs Backpack"

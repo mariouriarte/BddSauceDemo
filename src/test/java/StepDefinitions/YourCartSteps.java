@@ -18,4 +18,9 @@ public class YourCartSteps {
     public void verifyItemInCart(String item){
         yourCartPage.verifyAddItemToCart(item);
     }
+
+    @Then("I should see a label price that says {string}")
+    public void verifyItemPriceInCart(String price){
+        yourCartPage.verifyPriceOfItemCar(price);
+    }
 }
