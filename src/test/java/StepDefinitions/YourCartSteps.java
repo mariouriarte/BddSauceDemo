@@ -3,6 +3,7 @@ package StepDefinitions;
 import Pages.YourCartPage;
 import Utilities.DriverManager;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 
 public class YourCartSteps {
 
@@ -13,4 +14,8 @@ public class YourCartSteps {
           yourCartPage.clickOnCheckoutButton();
     }
 
+    @Then("I verify that the item is {string}")
+    public void verifyItemInCart(String item){
+        yourCartPage.verifyAddItemToCart(item);
+    }
 }
